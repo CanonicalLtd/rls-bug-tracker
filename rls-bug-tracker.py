@@ -177,6 +177,7 @@ def main():
                                                                       ':sleeping:' if age > 7 else ':sunglasses:',
                                                                       age,
                                                                       bug.date_task_created))
+                    print('\n') # Without this extra new line the discourse formatting goes to pot and everything is a heading
                     RLS_BUGS_LIST.append(bugno)
                     print("---\n")
 

@@ -30,7 +30,8 @@ USERNAMES = {
 'Didier Roche': 'didrocks',
 'Olivier Tilloy':'oSoMoN',
 'Marcus Tomlinson':'marcustomlinson',
-'Will Cooke':'willcooke'
+'Martin Wimpress':'wimpress',
+'Heather Ellsworth':'hellsworth'
 }
 
 

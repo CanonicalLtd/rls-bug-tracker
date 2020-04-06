@@ -31,7 +31,8 @@ USERNAMES = {
 'Olivier Tilloy':'oSoMoN',
 'Marcus Tomlinson':'marcustomlinson',
 'Martin Wimpress':'wimpress',
-'Heather Ellsworth':'hellsworth'
+'Heather Ellsworth':'hellsworth',
+'Patrick Wu':'callmepk'
 }
 
 
@@ -124,7 +125,7 @@ def build_uploads_bug_list(uploads):
                 continue
 
     return bug_list
-   
+
 def main():
     print("\n\n\n\n\n\n")
     launchpad = Launchpad.login_anonymously('read-only connection', 'production', version="devel")
@@ -156,11 +157,10 @@ def main():
         print("---\n")
         ubuntu_series = launchpad.distributions['ubuntu'].getSeries(name_or_version=rls)
         uploads = ubuntu_series.getPackageUploads(status='Unapproved')
-        global uploads_bug_list 
+        global uploads_bug_list
         uploads_bug_list = set(build_uploads_bug_list(uploads))
-        
+
         for (assignee, bugs) in RlsTrackingBugs(rls, args.team).items():
-            
             for (bugno, bug) in bugs.items():
                 if bugno not in RLS_BUGS_LIST and bugno not in uploads_bug_list:
                     if assignee:
@@ -185,5 +185,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
- 
